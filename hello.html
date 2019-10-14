@@ -1,1 +1,9 @@
-'hello'
+excelExceptionMessage.setTabid(UUID.randomUUID().toString().replace("-", ""));
+				excelExceptionMessage.setOperater(operater);
+				excelExceptionMessage.setSessionid(sessionid);
+				//excelimportdao.addExcelExceptionMessage(excelExceptionMessage);
+				String sqlString="insert into TY_BAS_EXCELEXCEPTION(tabid,sessionid,operater,sheetNum,rownums, colnums,erroInfo,CREATETIME) " +
+						"values('"+excelExceptionMessage.getTabid()+"','"+excelExceptionMessage.getSessionid()+"','"+
+						 excelExceptionMessage.getOperater()+"','"+excelExceptionMessage.getSheetNum()+"','"+
+						 excelExceptionMessage.getRowNum()+"','"+excelExceptionMessage.getColNum()+"','"+excelExceptionMessage.getErroInfo()+"',sysdate)";
+				sqllists.add(sqlString);
